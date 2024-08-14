@@ -23,8 +23,8 @@ def mnist_iid(dataset, num_users):
 
 def mnist_iid_notuniform(dataset, num_users):
     #创建一种分配数量不同但依然满足独立同分布的数据分配方法
-    min_samples = int(len(dataset) / num_users) - 150
-    max_samples = int(len(dataset) / num_users) + 150
+    min_samples = int(len(dataset) / num_users) - 100
+    max_samples = int(len(dataset) / num_users) + 100
     num_items = np.random.randint(min_samples, max_samples, size=num_users)
     total_samples = sum(num_items)
     all_idxs = [i for i in range(len(dataset))]
